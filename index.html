@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Expense Tracker</title>
     <link rel="stylesheet" href="assets/css/style.css" />
-    
   </head>
   <body>
-    <!-- Main Section container Begin here -->
+    <!-- Main Section container Begins here -->
     <div class="container">
       <h1>Income and Expense Tracker</h1>
       <!-- Dashboard Begins Here -->
@@ -29,6 +28,8 @@
         </header>
       </main>
       <!-- Dashboard Ends Here -->
+
+      <!-- Income & Expense Begins Here -->
       <h2>Add New Income</h2>
       <div class="form">
         <input type="text" id="incomeDesc" placeholder="Income description" />
@@ -36,7 +37,6 @@
         <input type="date" id="incomeDate" />
         <button onclick="addIncome()">Add Income</button>
       </div>
-
       <h2>Add New Expense</h2>
       <div class="form">
         <input type="text" id="expenseDesc" placeholder="Expense description" />
@@ -44,6 +44,9 @@
         <input type="date" id="expenseDate" />
         <button onclick="addExpense()">Add Expense</button>
       </div>
+      <!-- Income & Expense Ends Here -->
+
+      <!-- Income & Expense List Table Begins here -->
       <div class="incomes">
         <h2>Income List</h2>
         <table id="incomesTable">
@@ -69,8 +72,11 @@
           </thead>
           <tbody id="expensesList"></tbody>
         </table>
+        <!-- Income & Expense List Table Ends here -->
       </div>
     </div>
+    <!-- Main Section container Ends here -->
+
     <script src="assets/js/main.js"></script>
   </body>
 </html>
