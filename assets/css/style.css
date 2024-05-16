@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: left;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form {
+  margin-bottom: 20px;
+}
+
+.form input {
+  width: calc(50% - 5px);
+  padding: 8px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.expenses {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+/* Incomes Table */
+#incomesTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#incomesTable th,
+#incomesTable td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+#incomesTable th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+#incomesTable tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Incomes Table ends */
+
+#expensesTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#expensesTable th,
+#expensesTable td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+#expensesTable th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+#expensesTable tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.expenses p {
+  text-align: right;
+  font-weight: bold;
+}
+
+main {
+  max-width: 750px;
+  margin: 1rem;
+  padding: 1 rem;
+}
+
+header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header div {
+  padding: 5px;
+}
+
+header div:first-child {
+  flex-basis: 100%;
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+header div:nth-child(n + 2) {
+  flex-basis: 50%;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+header h5 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}

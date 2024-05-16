@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Main Section container Begins here -->
+    <div class="container">
+      <h1>Income and Expense Tracker</h1>
+      <!-- Dashboard Begins Here -->
+      <main>
+        <header>
+          <div>
+            <h5>Total Balance</h5>
+            #<span id="balance">#0.00</span>
+          </div>
+          <div>
+            <h5>Income</h5>
+            #<span id="totalIncome">#0.00</span>
+          </div>
+          <div>
+            <h5>Expense</h5>
+            #<span id="totalExpenses">#0.00</span>
+          </div>
+        </header>
+      </main>
+      <!-- Dashboard Ends Here -->
+      <h2>Add New Income</h2>
+      <div class="form">
+        <input type="text" id="incomeDesc" placeholder="Income description" />
+        <input type="number" id="incomeAmount" placeholder="Income amount" />
+        <input type="date" id="incomeDate" />
+        <button onclick="addIncome()">Add Income</button>
+      </div>
+
+      <h2>Add New Expense</h2>
+      <div class="form">
+        <input type="text" id="expenseDesc" placeholder="Expense description" />
+        <input type="number" id="expenseAmount" placeholder="Expense amount" />
+        <input type="date" id="expenseDate" />
+        <button onclick="addExpense()">Add Expense</button>
+      </div>
+      <div class="incomes">
+        <h2>Income List</h2>
+        <table id="incomesTable">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody id="incomesList"></tbody>
+        </table>
+      </div>
+      <div class="expenses">
+        <h2>Expense List</h2>
+        <table id="expensesTable">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody id="expensesList"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
