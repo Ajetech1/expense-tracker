@@ -1,111 +1,4 @@
-/*
-let total = 0;
-
-function addExpense() {
-  let desc = document.getElementById("expenseDesc").value;
-  let datePicker = document.getElementById("expenseDate").value;
-  let amount = parseFloat(document.getElementById("expenseAmount").value);
-
-  if (desc.trim() === "" || isNaN(amount)) {
-    alert("Please enter valid expense description and amount.");
-    return;
-  }
-
-  // Format the date
-  let formattedDate = formatDate(datePicker);
-
-  total += amount;
-
-  let expensesTable = document
-    .getElementById("expensesTable")
-    .getElementsByTagName("tbody")[0];
-  let row = expensesTable.insertRow();
-  let cell1 = row.insertCell(0);
-  let cell2 = row.insertCell(1);
-  let cell3 = row.insertCell(2);
-  cell1.textContent = formattedDate;
-  cell2.textContent = desc;
-  cell3.textContent = `#${amount.toFixed(2)}`;
-  document.getElementById("totalAmount").textContent = total.toFixed(2);
-
-  document.getElementById("expenseDesc").value = "";
-  document.getElementById("expenseAmount").value = "";
-}
-
-function formatDate(dateString) {
-  let date = new Date(dateString);
-  let day = date.getDate().toString().padStart(2, "0");
-  let month = (date.getMonth() + 1).toString().padStart(2, "0");
-  let year = date.getFullYear();
-  return `${day}-${month}-${year}`;
-}
-*/
-
-/*
-let total = 0;
-
-// Load expenses from localStorage if available
-let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
-
-// Display saved expenses
-displayExpenses();
-
-function addExpense() {
-  let desc = document.getElementById("expenseDesc").value;
-  let datePicker = document.getElementById("expenseDate").value;
-  let amount = parseFloat(document.getElementById("expenseAmount").value);
-
-  if (desc.trim() === "" || isNaN(amount)) {
-    alert("Please enter valid expense description and amount.");
-    return;
-  }
-
-  total += amount;
-
-  let newExpense = {
-    date: formatDate(datePicker),
-    description: desc,
-    amount: amount.toFixed(2),
-  };
-
-  // Add new expense to the array
-  expenses.push(newExpense);
-
-  // Save expenses to localStorage
-  localStorage.setItem("totalAmount", total.toFixed(2));
-  localStorage.setItem("expenses", JSON.stringify(expenses));
-
-  // Display updated expenses
-  displayExpenses();
-
-  // Reset input fields
-  document.getElementById("expenseDesc").value = "";
-  document.getElementById("expenseAmount").value = "";
-}
-
-function formatDate(dateString) {
-  let date = new Date(dateString);
-  let day = date.getDate().toString().padStart(2, "0");
-  let month = (date.getMonth() + 1).toString().padStart(2, "0");
-  let year = date.getFullYear();
-  return `${day}-${month}-${year}`;
-}
-
-function displayExpenses() {
-  let expensesList = document.getElementById("expensesList");
-  expensesList.innerHTML = ""; // Clear previous content
-
-  // Iterate through expenses array and create table rows
-  expenses.forEach((expense) => {
-    let row = document.createElement("tr");
-    row.innerHTML = `<td>${expense.date}</td><td>${expense.description}</td><td>$${expense.amount}</td>`;
-    expensesList.appendChild(row);
-  });
-
-  // Display total
-  document.getElementById("totalAmount").textContent = total.toFixed(2);
-}
-*/
+// JS Variable declaration
 
 let totalIncome = parseFloat(localStorage.getItem("totalIncome")) || 0;
 let totalExpenses = parseFloat(localStorage.getItem("totalExpenses")) || 0;
@@ -114,6 +7,7 @@ let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
 
 displayData();
 
+// Income function begins here
 function addIncome() {
   let desc = document.getElementById("incomeDesc").value;
   let datePicker = document.getElementById("incomeDate").value;
@@ -143,6 +37,7 @@ function addIncome() {
   document.getElementById("incomeAmount").value = "";
 }
 
+// Expense function begins here
 function addExpense() {
   let desc = document.getElementById("expenseDesc").value;
   let datePicker = document.getElementById("expenseDate").value;
@@ -172,6 +67,7 @@ function addExpense() {
   document.getElementById("expenseAmount").value = "";
 }
 
+// Formatdate function begins here
 function formatDate(dateString) {
   let date = new Date(dateString);
   let day = date.getDate().toString().padStart(2, "0");
@@ -213,6 +109,7 @@ function displayExpenses() {
     totalExpenses.toFixed(2);
 }
 
+// Display balance function begins here
 function displayBalance() {
   let balance = totalIncome - totalExpenses;
   document.getElementById("balance").textContent = balance.toFixed(2);
