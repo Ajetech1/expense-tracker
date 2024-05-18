@@ -114,3 +114,83 @@ function displayBalance() {
   let balance = totalIncome - totalExpenses;
   document.getElementById("balance").textContent = balance.toFixed(2);
 }
+
+// Contact us Js Begins Here
+
+function sendEmail(event) {
+  event.preventDefault();
+  let isValid = true;
+
+  const fullName = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const sub = document.getElementById("subject").value;
+  const mess = document.getElementById("message").value;
+
+  if (fullName === "") {
+    document.querySelector("#name + .error-text").style.display = "block";
+    isValid = false;
+  } else {
+    document.querySelector("#name + .error-text").style.display = "none";
+  }
+
+  if (email === "") {
+    document.querySelector("#email + .error-text").style.display = "block";
+    isValid = false;
+  } else {
+    document.querySelector("#email + .error-text").style.display = "none";
+  }
+
+  if (phone === "") {
+    document.querySelector("#phone + .error-text").style.display = "block";
+    isValid = false;
+  } else {
+    document.querySelector("#phone + .error-text").style.display = "none";
+  }
+
+  if (sub === "") {
+    document.querySelector("#subject + .error-text").style.display = "block";
+    isValid = false;
+  } else {
+    document.querySelector("#subject + .error-text").style.display = "none";
+  }
+
+  if (mess === "") {
+    document.querySelector("#message + .error-text").style.display = "block";
+    isValid = false;
+  } else {
+    document.querySelector("#message + .error-text").style.display = "none";
+  }
+
+  if (isValid) {
+    const bodyMessage =
+      "Full Name: " +
+      fullName +
+      "<br/> Email: " +
+      email +
+      "<br/> Phone Number: " +
+      phone +
+      "<br/> Message: " +
+      mess;
+
+    console.log(bodyMessage);
+
+    Email.send({
+      SecureToken: "e4b4f164-84a5-449b-9d42-07a8a8d11ee5",
+      To: "jeleelajetunmobi@gmail.com",
+      From: "jeleelajetunmobi@gmail.com",
+      Subject: sub,
+      Body: bodyMessage,
+    }).then((message) => {
+      if (message === "OK") {
+        swal("Success!", "Message sent successfully!", "success").then(() => {
+          window.location.reload();
+        });
+      } else {
+        swal("Oops", "Something went wrong!", "error");
+      }
+    });
+  }
+}
+
+document.getElementById("contactform").addEventListener("submit", sendEmail);

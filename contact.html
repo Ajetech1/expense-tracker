@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Favicon -->
+    <link href="assets/expense.jpg" rel="icon" />
+  </head>
+  <body>
+    <div class="container">
+      <section class="contact">
+        <h2>Contact Us!</h2>
+
+        <form id="contactform" action="#">
+          <div class="input-box">
+            <div class="input-field field">
+              <input
+                type="text"
+                placeholder="Full Name"
+                id="name"
+                class="item"
+                autocomplete="off"
+              />
+              <div class="error-text">Full Name can't be blank</div>
+            </div>
+            <div class="input-field field">
+              <input
+                type="text"
+                placeholder="Email Address"
+                id="email"
+                class="item"
+                autocomplete="off"
+              />
+              <div class="error-text">Email can't be blank</div>
+            </div>
+          </div>
+
+          <div class="input-box">
+            <div class="input-field field">
+              <input
+                type="text"
+                placeholder="Phone Number"
+                id="phone"
+                class="item"
+                autocomplete="off"
+              />
+              <div class="error-text">Phone Number can't be blank</div>
+            </div>
+            <div class="input-field field">
+              <input
+                type="text"
+                placeholder="Subject"
+                id="subject"
+                class="item"
+                autocomplete="off"
+              />
+              <div class="error-text">Subject can't be blank</div>
+            </div>
+          </div>
+
+          <div class="textarea-field field">
+            <textarea
+              name=""
+              id="message"
+              cols="30"
+              rows="10"
+              placeholder="Your Message"
+              class="item"
+              autocomplete="off"
+            ></textarea>
+            <div class="error-text">Message can't be blank</div>
+          </div>
+          <button type="submit" onclick="sendEmail(event)">Send Message</button>
+        </form>
+      </section>
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

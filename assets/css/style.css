@@ -143,3 +143,155 @@ header h5 {
   font-weight: 600;
   text-transform: uppercase;
 }
+
+/* Contact Us styling begins here */
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  min-height: 100vh;
+  /* adjust the max-width to your liking */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.contact h2 {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.contact form {
+  width: 340px;
+  text-align: center;
+}
+
+form .input-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-box .input-field {
+  width: 48.5%;
+}
+
+.field .item {
+  width: 100%;
+  padding: 18px;
+  background: transparent;
+  border: 2px solid #007bff;
+  border-radius: 6px;
+  font-size: 16px;
+  margin: 12px;
+}
+
+.field .item::placeholder {
+  color: black;
+}
+
+.field .error-text {
+  font-size: 11px;
+  color: red;
+  margin: -5px 0 10px;
+  display: none;
+}
+
+form .textarea-field .item {
+  resize: none;
+}
+
+form .field .error-text {
+  margin-top: -10px;
+}
+
+form button {
+  padding: 12px 32px;
+  background: #007bff;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  color: white;
+  box-shadow: 0 0 10px #007bff;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.5s;
+}
+
+form button:hover {
+  box-shadow: none;
+}
+
+/* Footer css begins Here */
+
+footer {
+  background-color: #007bff;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 10px;
+  min-width: 200px; /* Set a minimum width for each section */
+}
+
+.footer-section h4 {
+  border-bottom: 2px solid #555;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-section p {
+  margin: 10px 0;
+}
+
+.social-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+.social-links li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.social-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid #555;
+  padding-top: 10px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-section p a {
+  text-decoration: none;
+  color: yellow;
+}
+
+.footer-bottom-copy p {
+  margin-right: 15px;
+}
+/* Footer css begins Here */
