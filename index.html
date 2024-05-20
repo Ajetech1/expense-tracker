@@ -37,16 +37,24 @@
       <!-- Income & Expense Begins Here -->
       <h2>Add New Income</h2>
       <div class="form">
-        <input type="text" id="incomeDesc" placeholder="Income description" />
+        <input
+          type="text"
+          id="incomeDesc"
+          placeholder="Type Income description"
+        />
         <input type="number" id="incomeAmount" placeholder="Income amount" />
-        <input type="date" id="incomeDate" />
+        <input type="date" id="incomeDate" placeholder="Date" />
         <button onclick="addIncome()">Add Income</button>
       </div>
       <h2>Add New Expense</h2>
       <div class="form">
-        <input type="text" id="expenseDesc" placeholder="Expense description" />
+        <input
+          type="text"
+          id="expenseDesc"
+          placeholder="Type Expense description"
+        />
         <input type="number" id="expenseAmount" placeholder="Expense amount" />
-        <input type="date" id="expenseDate" />
+        <input type="date" id="expenseDate" placeholder="Date" />
         <button onclick="addExpense()">Add Expense</button>
       </div>
       <!-- Income & Expense Ends Here -->
@@ -60,6 +68,7 @@
               <th>Date</th>
               <th>Description</th>
               <th>Amount</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody id="incomesList"></tbody>
@@ -73,6 +82,7 @@
               <th>Date</th>
               <th>Description</th>
               <th>Amount</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody id="expensesList"></tbody>
@@ -90,7 +100,7 @@
             </div>
             <div class="footer-section">
               <h4>Contact Us</h4>
-              <p>Click <a href="contact.html">Here </a>to reach us</p>
+              <p>Kindly click <a href="contact.html">here </a>to contact us</p>
               <p>
                 Your recommendation and feedback on this project will be highly
                 appriciated
@@ -99,9 +109,11 @@
             <div class="footer-section">
               <h4>Follow Us</h4>
               <ul class="social-links">
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
+                <li><a href="https://www.facebook.com/ajetech">Facebook</a></li>
+                <li><a href="https://www.x.com/ajetech">Twitter</a></li>
+                <li>
+                  <a href="https://www.instagram.com/ajetech4real">Instagram</a>
+                </li>
               </ul>
             </div>
           </div>

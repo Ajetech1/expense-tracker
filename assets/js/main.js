@@ -1,5 +1,4 @@
 // JS Variable declaration
-
 let totalIncome = parseFloat(localStorage.getItem("totalIncome")) || 0;
 let totalExpenses = parseFloat(localStorage.getItem("totalExpenses")) || 0;
 let incomes = JSON.parse(localStorage.getItem("incomes")) || [];
@@ -86,9 +85,14 @@ function displayIncomes() {
   let incomesList = document.getElementById("incomesList");
   incomesList.innerHTML = "";
 
-  incomes.forEach((income) => {
+  incomes.forEach((income, index) => {
     let row = document.createElement("tr");
-    row.innerHTML = `<td>${income.date}</td><td>${income.description}</td><td>#${income.amount}</td>`;
+    row.innerHTML = `
+      <td>${income.date}</td>
+      <td>${income.description}</td>
+      <td>₦${income.amount}</td>
+      <td><button style="background-color: red; color: white; border: none; padding: 10px; cursor: pointer;" onclick="deleteIncome(${index})">Delete</button></td>
+    `;
     incomesList.appendChild(row);
   });
 
@@ -99,14 +103,39 @@ function displayExpenses() {
   let expensesList = document.getElementById("expensesList");
   expensesList.innerHTML = "";
 
-  expenses.forEach((expense) => {
+  expenses.forEach((expense, index) => {
     let row = document.createElement("tr");
-    row.innerHTML = `<td>${expense.date}</td><td>${expense.description}</td><td>#${expense.amount}</td>`;
+    row.innerHTML = `
+      <td>${expense.date}</td>
+      <td>${expense.description}</td>
+      <td>₦${expense.amount}</td>
+      <td><button style="background-color: red; color: white; border: none; padding: 10px; cursor: pointer;" onclick="deleteExpense(${index})">Delete</button></td>
+    `;
     expensesList.appendChild(row);
   });
 
   document.getElementById("totalExpenses").textContent =
     totalExpenses.toFixed(2);
+}
+
+function deleteIncome(index) {
+  totalIncome -= parseFloat(incomes[index].amount);
+  incomes.splice(index, 1);
+
+  localStorage.setItem("totalIncome", totalIncome.toFixed(2));
+  localStorage.setItem("incomes", JSON.stringify(incomes));
+
+  displayData();
+}
+
+function deleteExpense(index) {
+  totalExpenses -= parseFloat(expenses[index].amount);
+  expenses.splice(index, 1);
+
+  localStorage.setItem("totalExpenses", totalExpenses.toFixed(2));
+  localStorage.setItem("expenses", JSON.stringify(expenses));
+
+  displayData();
 }
 
 // Display balance function begins here
